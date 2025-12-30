@@ -27,12 +27,12 @@ export const ProductProvider = ({ children }) => {
       (snapshot) => {
         setProducts(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
         productsLoaded = true;
-        if (productsLoaded && categoriesLoaded) setLoading(false);
+        if (productsLoaded && categoriesLoaded) setLoading(true);
       },
       (err) => {
         console.error("Error fetching products:", err);
         setError(err);
-        setLoading(false);
+        setLoading(true);
       }
     );
 
@@ -42,7 +42,7 @@ export const ProductProvider = ({ children }) => {
         setCategories(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
         categoriesLoaded = true;
         if (productsLoaded && categoriesLoaded) setLoading(false);
-        //console.log(products);
+        console.log(productsColRef);
         
       },
       (err) => {
@@ -57,6 +57,7 @@ export const ProductProvider = ({ children }) => {
       unsubProducts();
       unsubCategories();
     };
+  //// eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
