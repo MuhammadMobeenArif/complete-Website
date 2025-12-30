@@ -65,146 +65,202 @@ export default function Login() {
             <Link to="/signup"> Sign up</Link>
           </p>
 
-          <div className="demo-info">
+        {/*  <div className="demo-info">
             <hr />
             <p>Email: <span>mobeenarif13@gmail.com</span></p>
             <p>Password: <span>mobeenarif13</span></p>
-          </div>
+          </div>*/}
 
         </div>
       </div>
+<style>{`
+/* ===== Wrapper ===== */
+.login-wrapper {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background:
+    radial-gradient(circle at 15% 15%, #c7d2fe, transparent 55%),
+    radial-gradient(circle at 85% 85%, #fbcfe8, transparent 55%),
+    linear-gradient(135deg, #eef2ff, #f8fafc);
+  animation: bgMove 18s ease-in-out infinite alternate;
+}
 
-      {/* Custom CSS */}
-      <style>{`
-        .login-wrapper {
-          min-height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: linear-gradient(135deg, #e0e7ff, #f0f9ff);
-          padding: 16px;
-        }
+@keyframes bgMove {
+  from { background-position: 0% 0%; }
+  to { background-position: 100% 100%; }
+}
 
-        .login-card {
-          width: 100%;
-          max-width: 420px;
-          background: rgba(255, 255, 255, 0.85);
-          backdrop-filter: blur(12px);
-          border-radius: 20px;
-          padding: 32px;
-          box-shadow: 0 30px 60px rgba(0,0,0,0.15);
-          animation: fadeUp 0.6s ease;
-        }
+/* ===== Card ===== */
+.login-card {
+  width: 100%;
+  max-width: 430px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
+  padding: 40px 36px;
+  box-shadow:
+    0 45px 90px rgba(0,0,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  animation: fadeScale 0.7s cubic-bezier(.4,0,.2,1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
 
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+.login-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 60px 120px rgba(0,0,0,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+}
 
-        .login-title {
-          text-align: center;
-          font-size: 36px;
-          font-weight: 800;
-          margin-bottom: 24px;
-          background: linear-gradient(90deg, #2563eb, #7c3aed);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
+@keyframes fadeScale {
+  from {
+    opacity: 0;
+    transform: translateY(35px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
 
-        label {
-          display: block;
-          margin-bottom: 6px;
-          font-weight: 600;
-          color: #374151;
-        }
+/* ===== Title ===== */
+.login-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 32px;
+  letter-spacing: -0.6px;
+  background: linear-gradient(90deg, #2563eb, #7c3aed, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-        input {
-          width: 100%;
-          padding: 12px 14px;
-          border-radius: 10px;
-          border: 1px solid #d1d5db;
-          outline: none;
-          transition: all 0.3s;
-        }
+/* ===== Labels ===== */
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+}
 
-        input:focus {
-          border-color: #6366f1;
-          box-shadow: 0 0 0 3px rgba(99,102,241,0.3);
-        }
+/* ===== Inputs ===== */
+input {
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 16px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  background: rgba(255,255,255,0.96);
+  outline: none;
+  transition: all 0.25s ease;
+}
 
-        button {
-          width: 100%;
-          padding: 12px;
-          border-radius: 10px;
-          border: none;
-          font-weight: 600;
-          color: white;
-          background: linear-gradient(135deg, #2563eb, #4f46e5);
-          cursor: pointer;
-          transition: all 0.3s;
-        }
+input:hover {
+  border-color: #a5b4fc;
+}
 
-        button:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 10px 20px rgba(37,99,235,0.4);
-        }
+input::placeholder {
+  color: #9ca3af;
+}
 
-        button:disabled {
-          opacity: 0.6;
-          cursor: not-allowed;
-        }
+input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.28);
+  transform: scale(1.015);
+}
 
-        .error-box {
-          background: #fee2e2;
-          color: #991b1b;
-          padding: 12px;
-          border-radius: 10px;
-          margin-bottom: 20px;
-          font-weight: 500;
-        }
+/* ===== Button ===== */
+button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 18px;
+  border: none;
+  font-size: 16px;
+  font-weight: 800;
+  color: white;
+  background-size: 200% 200%;
+  background-image: linear-gradient(
+    135deg,
+    #2563eb,
+    #4f46e5,
+    #7c3aed,
+    #ec4899
+  );
+  cursor: pointer;
+  transition: all 0.35s ease;
+}
 
-        .signup-text {
-          text-align: center;
-          margin-top: 24px;
-          color: #4b5563;
-        }
+button:hover {
+  background-position: right center;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(79,70,229,0.5);
+}
 
-        .signup-text a {
-          color: #4f46e5;
-          font-weight: 600;
-          text-decoration: none;
-        }
+button:active {
+  transform: scale(0.96);
+}
 
-        .signup-text a:hover {
-          text-decoration: underline;
-        }
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
-        .demo-info {
-          margin-top: 24px;
-          text-align: center;
-          font-size: 14px;
-          color: #374151;
-        }
+/* ===== Error ===== */
+.error-box {
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #7f1d1d;
+  padding: 14px 16px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+  font-weight: 600;
+  animation: shake 0.4s ease;
+}
 
-        .demo-info hr {
-          margin-bottom: 12px;
-          border: none;
-          height: 4px;
-          border-radius: 4px;
-          background: linear-gradient(to right, #3b82f6, #a855f7, #ec4899);
-        }
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
 
-        .demo-info span {
-          color: #7c3aed;
-          font-weight: 600;
-        }
-      `}</style>
+/* ===== Footer ===== */
+.signup-text {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.signup-text a {
+  margin-left: 4px;
+  font-weight: 800;
+  color: #4f46e5;
+  text-decoration: none;
+  position: relative;
+}
+
+.signup-text a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #6366f1, #ec4899);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.signup-text a:hover::after {
+  transform: scaleX(1);
+}
+`}</style>
+
+
     </>
   );
 }
