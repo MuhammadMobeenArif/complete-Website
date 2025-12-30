@@ -19,7 +19,7 @@ function Footer() {
                 <li><a href="#">ABOUT US</a></li>
                 <li>
                   <a href="https://github.com/MuhammadMobeenArif" target="_blank">
-                       <a href="https://www.facebook.com/" target="_blank"></a>
+            
                     CONTACT
                   </a>
                 </li>
