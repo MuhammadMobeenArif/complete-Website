@@ -51,13 +51,13 @@ export default function Settings() {
   };
 
   const tabs = [
-    { id: "restaurant", label: "Restaurant Info" },
-    { id: "profile", label: "Profile" },
+    { id: "restaurant", label: "RESTAURANT INFO" },
+    { id: "profile", label: "PROFILE" },
     {
       id: "notifications",
       label: <FaBell className="text-gray-600 dark:text-gray-300 text-xl hover:text-red-600 transition-colors duration-200" />,
     },
-    { id: "payment", label: "Payment" },
+    { id: "payment", label: "PAYMENT" },
   ];
 
   return (
