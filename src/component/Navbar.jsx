@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header className="flex justify-between items-center px-6 py-4 shadow-lg bg-linear-to-r from-white to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <header className="flex justify-between items-center px-6 py-4 shadow-lg bg-linear-to-r from-white to-gray-100 dark:from-gray-500 dark:to-gray-500 transition-colors duration-300">
       
       {/* Greeting / Title */}
       <h1 className="text-gray- 900 dark:text-white font-extrabold text-lg md:text-xl lg:text-2xl bg-linear-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
