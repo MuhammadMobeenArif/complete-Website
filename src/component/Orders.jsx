@@ -54,7 +54,7 @@ export default function Orders() {
   };
 
 return (
-  <div className="flex h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors">
+  <div className="flex h-screen bg-linear-to-br from-gray-100 via-gray-200 to-gray-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors">
     <Sidebar />
 
     <div className="flex-1 flex flex-col">
@@ -71,7 +71,7 @@ return (
           <button
             onClick={handleAddOrder}
             className="px-6 py-2 rounded-xl font-semibold text-white
-            bg-gradient-to-r from-green-500 to-emerald-600
+            bg-linear-to-r from-green-500 to-emerald-600
             hover:scale-105 hover:shadow-xl transition-all"
           >
             + ADD ORDER
@@ -84,14 +84,14 @@ return (
           border border-gray-200 dark:border-gray-700">
 
           <table className="min-w-full">
-            <thead className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+            <thead className="bg-linear-to-r from-blue-600 to-purple-600 text-white">
               <tr>
                 <th className="py-4 px-6 text-left">ID</th>
-                <th className="py-4 px-6 text-left">Customer</th>
-                <th className="py-4 px-6 text-left">Item</th>
-                <th className="py-4 px-6 text-left">Qty</th>
-                <th className="py-4 px-6 text-left">Status</th>
-                <th className="py-4 px-6 text-center">Actions</th>
+                <th className="py-4 px-6 text-left">CUSTOMER</th>
+                <th className="py-4 px-6 text-left">ITEM</th>
+                <th className="py-4 px-6 text-left">QTY</th>
+                <th className="py-4 px-6 text-left">STATUS</th>
+                <th className="py-4 px-6 text-center">ACTIONS</th>
               </tr>
             </thead>
 
@@ -133,7 +133,7 @@ return (
                     <button
                       onClick={() => handleEditStatus(order.id)}
                       className="px-4 py-1.5 rounded-lg text-sm font-semibold text-white
-                      bg-gradient-to-r from-blue-500 to-indigo-600
+                      bg-linear-to-r from-blue-500 to-indigo-600
                       hover:scale-105 transition-all"
                     >
                       EDIT
@@ -142,7 +142,7 @@ return (
                     <button
                       onClick={() => handleDelete(order.id)}
                       className="px-4 py-1.5 rounded-lg text-sm font-semibold text-white
-                      bg-gradient-to-r from-red-500 to-rose-600
+                      bg-linear-to-r from-red-500 to-rose-600
                       hover:scale-105 transition-all"
                     >
                       DELETE
