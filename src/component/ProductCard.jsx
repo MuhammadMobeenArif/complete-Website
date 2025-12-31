@@ -50,7 +50,7 @@ function ProductCards({ product, selectedRating = 0}) {
       </div>
 
       <div className="absolute w-full bottom-0 flex justify-between items-center px-5 py-3 bg-white border-t">
-        <span className="font-bold text-lg text-gray-900">${product.price}</span>
+        <span className="font-bold text-lg text-gray-500">${product.price}</span>
 
         
        
