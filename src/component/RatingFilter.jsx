@@ -20,7 +20,7 @@ const RatingFilter = ({ selectedRating, onChangeRating }) => {
               </svg>
             ))}
           </div>
-          <p className="text-gray-400">{rating === 5 ? "5.0" : rating.toFixed(1) + " +"}</p>
+          <p className="text-gray-500">{rating === 5 ? "5.0" : rating.toFixed(1) + " +"}</p>
         </div>
       ))}
     </div>
