@@ -32,4 +32,3 @@ function Search({ setShowSearch, search, showSearch, setSearch }) {
 }
 
 export default Search;
-
