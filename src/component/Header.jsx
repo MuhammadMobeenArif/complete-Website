@@ -125,20 +125,21 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-linear-to-r from-blue-600 to-purple-600 shadow-lg">
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 shadow-xl">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* Logo */}
         <Link
           to="/home"
-          className="text-2xl font-extrabold text-white tracking-wide hover:scale-105 transition-transform"
+          className="text-2xl font-extrabold text-white tracking-wider 
+          hover:scale-105 transition-transform duration-300"
         >
           MY WEBSITE STORE
         </Link>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-white focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           <svg
@@ -164,7 +165,8 @@ export default function Header() {
         {/* Navigation */}
         <nav
           className={`absolute md:static top-full left-0 w-full md:w-auto 
-          bg-white md:bg-transparent md:flex items-center gap-6 
+          bg-white md:bg-transparent 
+          md:flex items-center gap-8
           transition-all duration-300 ease-in-out
           ${isOpen ? "block" : "hidden"} md:block`}
         >
@@ -173,14 +175,18 @@ export default function Header() {
               key={item.path}
               to={item.path}
               onClick={() => setIsOpen(false)}
-              className={`block md:inline-block px-6 py-3 md:p-0 text-sm font-semibold 
-              transition-all duration-200
+              className={`relative block md:inline-block px-6 py-3 md:p-0 
+              text-sm font-bold tracking-wide
+              transition-all duration-300
               ${
                 location.pathname === item.path
-                  ? "text-blue-600 md:text-yellow-300"
-                  : "text-gray-700 md:text-white hover:text-blue-600 md:hover:text-yellow-300"
+                  ? "text-indigo-600 md:text-yellow-300"
+                  : "text-gray-700 md:text-white hover:text-indigo-600 md:hover:text-yellow-300"
               }`}
             >
+              {/* Underline animation */}
+              <span className="absolute left-0 -bottom-1 w-full h-0.5 bg-yellow-300 scale-x-0 hover:scale-x-100 transition-transform origin-left md:block hidden"></span>
+
               {item.name === "CART" ? (
                 <div className="relative flex items-center gap-2">
                   <svg
@@ -198,7 +204,7 @@ export default function Header() {
                   </svg>
 
                   {totalCartItems > 0 && (
-                    <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full animate-pulse">
+                    <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full animate-bounce">
                       {totalCartItems}
                     </span>
                   )}
@@ -213,12 +219,6 @@ export default function Header() {
     </header>
   );
 }
-
-
-
-
-
-
 
 
 
