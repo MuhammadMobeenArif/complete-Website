@@ -125,7 +125,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 shadow-xl">
+    <header className="sticky top-0 z-50 bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 shadow-xl">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* Logo */}
