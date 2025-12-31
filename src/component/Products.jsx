@@ -12,7 +12,7 @@ function Products({ products = [], selectedRating = 0, search = "" }) {
   if (!products || products.length === 0) {
     return (
       <div className="text-center text-gray-500 text-lg py-10">
-        No matching products
+        NO MATCHING PRODUCTS 
       </div>
     );
   }
@@ -28,7 +28,7 @@ function Products({ products = [], selectedRating = 0, search = "" }) {
           textAlign: "center",
         }}
       >
-        No products found for "<strong>{search}</strong>"
+        NO PRODUCTS FOUND FOR "<strong>{search}</strong>"
       </p>
     );
   }
