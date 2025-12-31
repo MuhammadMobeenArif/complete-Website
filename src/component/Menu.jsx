@@ -97,7 +97,7 @@ export default function Menu() {
         });
         toast.success("Item added");
       }
-      setShowModal(false);
+      setShowModal(true);
     } catch (err) {
       toast.error("Action failed");
     }
