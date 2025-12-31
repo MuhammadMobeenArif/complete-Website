@@ -10,7 +10,7 @@ function SortProduct({ sort, setSort }) {
       <select
         value={sort}
         onChange={handleSortChange}
-        className="bg-gray-800 text-white px-3 py-1 rounded-lg cursor-pointer"
+        className="bg-gray-500 text-white px-3 py-1 rounded-lg cursor-pointer"
       >
         <option value="none">Default</option>
         <option value="price-low">Price: Low to High</option>
